@@ -28,8 +28,6 @@ CREATE TABLE funcionarios (
 );
 
 -- Inserir funcionário de exemplo
-INSERT INTO funcionarios (nome, email, senha)
-VALUES ('emma', 'emma@petshop.com', 'emmamanu');
 
 -- Criar tabela de clientes
 DROP TABLE IF EXISTS clientes;
@@ -54,4 +52,7 @@ SELECT * FROM clientes;
 ALTER TABLE funcionarios
 ADD COLUMN ra VARCHAR(50) NOT NULL AFTER senha,
 ADD COLUMN cpf VARCHAR(20) NOT NULL AFTER ra;
+
+SELECT * FROM funcionarios
+
 
