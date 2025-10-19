@@ -12,30 +12,15 @@
         <form action="validar.php" method="post">
             <div class="form-group">
                 <label for="email">E-mail</label>
-                <input 
-                    type="email" 
-                    class="form-control" 
-                    id="email" 
-                    name="email" 
-                    placeholder="Digite seu e-mail" 
-                    required 
-                />
+                <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu e-mail" required />
             </div>
             <div class="form-group">
                 <label for="senha">Senha</label>
-                <input 
-                    type="password" 
-                    class="form-control" 
-                    id="senha" 
-                    name="senha" 
-                    placeholder="Digite sua senha" 
-                    required 
-                />
+                <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha" required />
             </div>
             <button type="submit" class="btn btn-primary btn-block">Entrar</button>
         </form>
 
-        <!-- Botões centralizados -->
         <div class="d-flex justify-content-center mt-4">
             <button class="btn btn-success mr-2" data-toggle="modal" data-target="#cadastroModal">Cadastrar Funcionário</button>
             <a href="index.php" class="btn btn-secondary">Voltar para o início</a>
@@ -80,6 +65,11 @@
                 <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Digite o CPF" required>
               </div>
 
+              <div class="form-group">
+                <label for="senha_admin">Senha do Administrador</label>
+                <input type="password" class="form-control" id="senha_admin" name="senha_admin" placeholder="Digite a senha do administrador" required>
+              </div>
+
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -90,7 +80,6 @@
       </div>
     </div>
 
-    <!-- Scripts Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
