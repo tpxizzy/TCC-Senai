@@ -12,23 +12,23 @@ $email       = trim($_POST['email']);
 $senha       = $_POST['senha'];
 $ra          = trim($_POST['ra']);
 $cpf         = trim($_POST['cpf']);
+$admin_user  = trim($_POST['admin_user']);
 $senha_admin = trim($_POST['senha_admin']);
 
 // Validação básica
-if (empty($nome) || empty($email) || empty($senha) || empty($ra) || empty($cpf) || empty($senha_admin)) {
+if (empty($nome) || empty($email) || empty($senha) || empty($ra) || empty($cpf) || empty($admin_user) || empty($senha_admin)) {
     echo "<script>alert('Por favor, preencha todos os campos!'); window.history.back();</script>";
     exit;
 }
 
 // Verifica senha do administrador no banco
-$adminUser = 'Christian'; // seu admin
 $stmt = $conn->prepare("SELECT senha_hash FROM administradores WHERE username = ? LIMIT 1");
-$stmt->bind_param("s", $adminUser);
+$stmt->bind_param("s", $admin_user);
 $stmt->execute();
 $res = $stmt->get_result();
 
 if ($res->num_rows === 0) {
-    echo "<script>alert('Administrador não encontrado.'); window.history.back();</script>";
+    echo "<script>alert('Administrador não encontrado!'); window.history.back();</script>";
     exit;
 }
 
