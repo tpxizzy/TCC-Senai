@@ -53,6 +53,19 @@ ALTER TABLE funcionarios
 ADD COLUMN ra VARCHAR(50) NOT NULL AFTER senha,
 ADD COLUMN cpf VARCHAR(20) NOT NULL AFTER ra;
 
-SELECT * FROM funcionarios
+DROP TABLE IF EXISTS administradores;
+CREATE TABLE administradores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) NOT NULL UNIQUE,
+    senha_hash VARCHAR(255) NOT NULL,
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
+INSERT INTO administradores (username, senha_hash)
+VALUES ('Christian', '$2y$10$ByxjzcW1lr915I1PnZzdDOLProlnUHah7cVdQgmoMpyf5OeROTby2'),
+('Emmanuel', '$2y$10$G9d7y3uM0coGQkc76d8PyegT8JsgjfUuXeu8eb5dxPZviHUFu2GrS'); 
+
+SELECT * FROM funcionarios;
+
+SELECT * FROM administradores
 
